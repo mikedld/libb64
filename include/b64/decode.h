@@ -8,15 +8,15 @@ For details, see http://sourceforge.net/projects/libb64
 #ifndef BASE64_DECODE_H
 #define BASE64_DECODE_H
 
+extern "C"
+{
+#include "cdecode.h"
+}
+
 #include <iostream>
 
 namespace base64
 {
-	extern "C"
-	{
-		#include "cdecode.h"
-	}
-
 	struct decoder
 	{
 		base64_decodestate _state;

@@ -8,15 +8,15 @@ For details, see http://sourceforge.net/projects/libb64
 #ifndef BASE64_ENCODE_H
 #define BASE64_ENCODE_H
 
+extern "C"
+{
+#include "cencode.h"
+}
+
 #include <iostream>
 
 namespace base64
 {
-	extern "C"
-	{
-#include "cencode.h"
-	}
-
 	struct encoder
 	{
 		base64_encodestate _state;
