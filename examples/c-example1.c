@@ -34,7 +34,7 @@ char* encode(const char* input)
 	/* keep track of our encoded position */
 	char* c = output;
 	/* store the number of bytes encoded by a single call */
-	int cnt = 0;
+	size_t cnt = 0;
 	/* we need an encoder state */
 	base64_encodestate s;
 	
@@ -63,7 +63,7 @@ char* decode(const char* input)
 	/* keep track of our decoded position */
 	char* c = output;
 	/* store the number of bytes decoded by a single call */
-	int cnt = 0;
+	size_t cnt = 0;
 	/* we need a decoder state */
 	base64_decodestate s;
 	

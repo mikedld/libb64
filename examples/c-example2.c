@@ -12,6 +12,10 @@ know the size of the input file before hand, and so we use to iterate over
 encoding and decoding the data.
 */
 
+#if defined(_MSC_VER) && !defined(_CRT_SECURE_NO_WARNINGS)
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 #include <b64/cencode.h>
 #include <b64/cdecode.h>
 
@@ -33,7 +37,7 @@ void encode(FILE* inputFile, FILE* outputFile)
 	/* we need an encoder and decoder state */
 	base64_encodestate es;
 	/* store the number of bytes encoded by a single call */
-	int cnt = 0;
+	size_t cnt = 0;
 	
 	/*---------- START ENCODING ----------*/
 	/* initialise the encoder state */
@@ -68,7 +72,7 @@ void decode(FILE* inputFile, FILE* outputFile)
 	/* we need an encoder and decoder state */
 	base64_decodestate ds;
 	/* store the number of bytes encoded by a single call */
-	int cnt = 0;
+	size_t cnt = 0;
 	
 	/*---------- START DECODING ----------*/
 	/* initialise the encoder state */
